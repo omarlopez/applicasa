@@ -113,7 +113,7 @@ elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
     if os.getenv("DATABASE_URL", None) is None:
         raise Exception("DATABASE_URL environment variable not defined")
     DATABASES = {
-        "default": dj_database_url.parse(os.environ.get(default='postgres://db:AVNS_l6uq3XrzS97EGExMCkR@app-dc7fc44b-ff8a-41d4-969c-4d285a062852-do-user-1127522-0.c.db.ondigitalocean.com/db')),
+        "default": dj_database_url.parse(os.environ.get(default='postgresql://db:AVNS_l6uq3XrzS97EGExMCkR@app-dc7fc44b-ff8a-41d4-969c-4d285a062852-do-user-1127522-0.c.db.ondigitalocean.com:25060/db?sslmode=require')),
     }
 
 # Password validation
