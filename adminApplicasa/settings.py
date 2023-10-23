@@ -99,23 +99,6 @@ DATABASES = {
     }
 }
 
-
-#DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
-
-#if DEVELOPMENT_MODE is True:
-#    DATABASES = {
-#        "default": {
-#            "ENGINE": "django.db.backends.postgresql_psycopg2",
-#            "NAME": "applicasa_db",
-#        }
-#    }
-#elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
-#    if os.getenv("DATABASE_URL", None) is None:
-#        raise Exception("DATABASE_URL environment variable not defined")
-#    DATABASES = {
-#        "default": dj_database_url.config(default='postgresql://db:AVNS_l6uq3XrzS97EGExMCkR@app-dc7fc44b-ff8a-41d4-969c-4d285a062852-do-user-1127522-0.c.db.ondigitalocean.com:25060/db?sslmode=require'),
-#    }
-
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -152,9 +135,8 @@ USE_L10N = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
