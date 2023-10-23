@@ -56,7 +56,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'django_app.urls'
+ROOT_URLCONF = 'adminApplicasa.urls'
 
 TEMPLATES = [
     {
@@ -82,7 +82,7 @@ REST_FRAMEWORK = {
     ]
 }
 
-WSGI_APPLICATION = 'django_app.wsgi.application'
+WSGI_APPLICATION = 'adminApplicasa.wsgi.application'
 
 
 # Database
@@ -105,8 +105,8 @@ DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
 if DEVELOPMENT_MODE is True:
     DATABASES = {
         "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+            "ENGINE": "django.db.backends.postgresql_psycopg2",
+            "NAME": "applicasa_db",
         }
     }
 elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
