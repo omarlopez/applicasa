@@ -88,33 +88,33 @@ WSGI_APPLICATION = 'adminApplicasa.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#        'NAME': 'applicasa_db',
-#        'user': 'postgres',
-#        'PASSWORD': '12345678',
-#        'HOST': 'localhost',
-#        'PORT': '5432',
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'db',
+        'user': 'postgres',
+        'PASSWORD': 'AVNS_l6uq3XrzS97EGExMCkR',
+        'HOST': 'app-dc7fc44b-ff8a-41d4-969c-4d285a062852-do-user-1127522-0.c.db.ondigitalocean.com',
+        'PORT': '25060',
+    }
+}
+
+
+#DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
+
+#if DEVELOPMENT_MODE is True:
+#    DATABASES = {
+#        "default": {
+#            "ENGINE": "django.db.backends.postgresql_psycopg2",
+#            "NAME": "applicasa_db",
+#        }
 #    }
-#}
-
-
-DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
-
-if DEVELOPMENT_MODE is True:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.postgresql_psycopg2",
-            "NAME": "applicasa_db",
-        }
-    }
-elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
-    if os.getenv("DATABASE_URL", None) is None:
-        raise Exception("DATABASE_URL environment variable not defined")
-    DATABASES = {
-        "default": dj_database_url.config(default='postgresql://db:AVNS_l6uq3XrzS97EGExMCkR@app-dc7fc44b-ff8a-41d4-969c-4d285a062852-do-user-1127522-0.c.db.ondigitalocean.com:25060/db?sslmode=require'),
-    }
+#elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
+#    if os.getenv("DATABASE_URL", None) is None:
+#        raise Exception("DATABASE_URL environment variable not defined")
+#    DATABASES = {
+#        "default": dj_database_url.config(default='postgresql://db:AVNS_l6uq3XrzS97EGExMCkR@app-dc7fc44b-ff8a-41d4-969c-4d285a062852-do-user-1127522-0.c.db.ondigitalocean.com:25060/db?sslmode=require'),
+#    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
