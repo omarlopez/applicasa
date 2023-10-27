@@ -101,6 +101,7 @@ WSGI_APPLICATION = 'adminApplicasa.wsgi.application'
 #    }
 #}
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
