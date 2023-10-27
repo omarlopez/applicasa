@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'products',
+    'tools',
+    'requirements',
     'rest_framework',
 ]
 
@@ -88,28 +90,28 @@ WSGI_APPLICATION = 'adminApplicasa.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#        'NAME': 'applicasa_db',
-#        'user': 'postgres',
-#        'PASSWORD': '12345678',
-#        'HOST': 'localhost',
-#        'PORT': '5432',
-#    }
-#}
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'defaultdb',
-        'USER': 'doadmin',
-        'PASSWORD': 'AVNS_aUqDjhspdsC-NuDRaC2',
-        'HOST': 'app-dc7fc44b-ff8a-41d4-969c-4d285a062852-do-user-1127522-0.c.db.ondigitalocean.com',
-        'PORT': '25060',
-        'OPTIONS': {'sslmode': 'require'},
+        'NAME': 'applicasa_db',
+        'user': 'postgres',
+        'PASSWORD': '12345678',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME': 'defaultdb',
+#        'USER': 'doadmin',
+#        'PASSWORD': 'AVNS_aUqDjhspdsC-NuDRaC2',
+#        'HOST': 'app-dc7fc44b-ff8a-41d4-969c-4d285a062852-do-user-1127522-0.c.db.ondigitalocean.com',
+#        'PORT': '25060',
+#        'OPTIONS': {'sslmode': 'require'},
+#    }
+#}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
