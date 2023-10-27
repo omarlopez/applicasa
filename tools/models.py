@@ -17,3 +17,6 @@ class Tools(models.Model):
     icons = models.CharField(max_length=20, choices=LIST_ICONS)
     button = models.CharField(max_length=20)
     isActive = models.BooleanField()
+
+    class Meta:
+        verbose_name_plural = "Herramientas"

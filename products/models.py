@@ -6,3 +6,6 @@ class Products(models.Model):
     title = models.CharField(max_length=50)
     description = models.TextField()
     img = models.ImageField(upload_to='images/')
+
+    class Meta:
+        verbose_name_plural = "Productos"
