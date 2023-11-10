@@ -30,7 +30,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
-
+MEDIA_ROOT = os.path.join(BASE_DIR, '') # 'data' is my media folder
+MEDIA_URL = ''
 # Application definition
 
 INSTALLED_APPS = [
@@ -43,6 +44,9 @@ INSTALLED_APPS = [
     'main',
     'products',
     'tools',
+    'blog',
+    'social',
+    'theme',
     'requirements',
     'rest_framework',
 ]
@@ -67,6 +71,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.images',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
