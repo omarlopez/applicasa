@@ -4,12 +4,13 @@ from django.db import models
 
 class Social(models.Model):
     LIST_OPTIONS = (
-        ("facebook", "facebook"),
-        ("twitter", "twitter"),
-        ("youtube", "youtube"),
+        ("facebook", "Facebook"),
+        ("X", "X"),
+        ("youtube", "Youtube"),
         ("phone", "Teléfono"),
-        ("whatsapp", "whatsapp"),
-        ("linkedin", "linkedin"),
+        ("whatsapp", "WhatsApp"),
+        ("linkedin", "Linkedin"),
+        ("Simulator", "Simulador"),
     )
     
     created = models.DateTimeField(auto_now_add=True)
